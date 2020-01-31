@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+IoU_1_ACNN = [0.632231404958677,0.6584022038567493,0.7038567493112947,0.7231404958677686,0.7286501377410468]
+IoU_5_ACNN = [0.3085399449035813,0.31129476584022037,0.33884297520661155,0.35674931129476584,0.33746556473829203]
+IoU_1_baseline = [0.5564738292011019,0.6460055096418733,0.662534435261708,0.6873278236914601,0.7121212121212122]
+IoU_5_baseline = [0.20798898071625344,0.26170798898071623,0.29614325068870523,0.32231404958677684,0.3278236914600551]
+
+Train = [1000,2000,3000,4000,5000]
+
+plt.plot(Train,IoU_1_ACNN)
+plt.plot(Train,IoU_1_baseline)
+plt.legend(['ACNN','baseline'])
+plt.title('Recall@10 when overlap over at least 10%')
+plt.show()
+
+plt.plot(Train,IoU_5_ACNN)
+plt.plot(Train,IoU_5_baseline)
+plt.legend(['ACNN','baseline'])
+plt.title('Recall@10 when overlap over at least 50%')
+plt.show()
